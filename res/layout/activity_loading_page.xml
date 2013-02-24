@@ -20,6 +20,7 @@
         android:layout_height="228dp"
         android:layout_gravity="center"
         android:src="@drawable/launch" />
+
     <TextView
         android:id="@+id/tap_text1"
         style="@style/mel"
