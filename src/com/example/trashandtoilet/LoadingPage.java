@@ -1,18 +1,19 @@
 package com.trashandtoilet;
 
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Window;
 
-public class MainActivity extends Activity {
+public class LoadingPage extends Activity {
 	protected boolean _active = true;
 	protected int _splashTime = 3000;
 
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {	
+	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		setContentView(R.layout.activity_loading_page);
 		 Thread splashTread = new Thread() {
 	            @Override
 	            public void run() {
@@ -28,13 +29,15 @@ public class MainActivity extends Activity {
 
 	                } finally {
 
-	                    startActivity(new Intent(MainActivity.this,
-	                            AndroidTabMainActivity.class));
-	                    MainActivity.this.finish();
+	                    startActivity(new Intent(LoadingPage.this,
+	                            SearchToilet.class));
+LoadingPage.this.finish();
 	                }
 	}
 		 };splashTread.start();
 		 
 	}
-	}
 
+	
+
+}
